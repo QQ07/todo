@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "A backend of todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js",
+    "prod": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qq07/todo.git"
+  },
+  "keywords": [
+    "simple",
+    "todo",
+    "backend",
+    "learning"
+  ],
+  "author": "Rohan Vaidya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qq07/todo/issues"
+  },
+  "homepage": "https://github.com/qq07/todo#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.4"
+  }
+}
