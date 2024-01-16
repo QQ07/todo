@@ -3,6 +3,9 @@ const todos = require("../db/models");
 
 const router = express.Router();
 
+router.get("/",(req,res)=>{
+  res.send("Todos backend")
+})
 router.get("/allTodos", async (req, res) => {
   const all = await todos.find();
   console.log(all);
