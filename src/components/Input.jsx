@@ -1,17 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
 
-let baseURL = "http://localhost:3000/";
+let baseURL = "https://todoapi.rohanvaidya.tech/";
 
 export default function Input({ setTodos }) {
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
 
   async function handleSubmit() {
+    let data = await axios.post(baseURL + "add", { title, description });
     setTodos((prevTodos) => {
       return [...prevTodos, { title, description }];
     }); 
-    let data = await axios.post(baseURL + "add", { title, description });
   }
   return (
     <div className="flex gap-4 flex-col w-4/5 h-1/2 items-center">

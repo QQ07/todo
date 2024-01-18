@@ -5,10 +5,10 @@ import {useEffect, useState } from "react";
 function App() {
   const [todos, setTodos] = useState([]);
    useEffect(() => {
-     fetch("http://localhost:3000/alltodos").then(async (data) => {
+     fetch("https://todoapi.rohanvaidya.tech/alltodos").then(async (data) => {
        let alltodos = await data.json();
        setTodos(alltodos);
-      //  console.log(alltodos);
+       //  console.log(alltodos);
      });
    }, []);
   return (
