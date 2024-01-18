@@ -11,7 +11,9 @@ export default function Input({ setTodos }) {
     let data = await axios.post(baseURL + "add", { title, description });
     setTodos((prevTodos) => {
       return [...prevTodos, { title, description }];
-    }); 
+    });
+    setTitle("");
+    setDescription("");
   }
   return (
     <div className="flex gap-4 flex-col w-4/5 h-1/2 items-center">
