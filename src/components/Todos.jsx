@@ -2,16 +2,21 @@ import { useEffect, useState } from "react";
 import Todo from "./Todo";
 
 export default function Todos({todos}) {
-  // const [todos, setTodos] = useState([]);
- 
+
   return (
     <>
       <div className="no-scrollbar h-screen overflow-scroll border border-slate-600 rounded text-white p-5">
         {todos.map(function (todo) {
-          // console.log(todo)
+          console.log("in todos.jsx"+todo._id)
+          if(todo.completed==false)
           return (
             <>
-              <Todo title={todo.title} description={todo.description}></Todo>
+              <Todo
+                key={todo._id}
+                id={todo._id}
+                title={todo.title}
+                description={todo.description}
+              ></Todo>
             </>
           );
         })}
