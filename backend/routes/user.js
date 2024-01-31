@@ -19,5 +19,31 @@ router.post("/add", async (req, res) => {
   console.log(msg);
   res.json({ msg: "added" });
 });
+router.delete("/delete/:id", async (req, res) => {
+  id = req.params.id;
+  console.log(id);
+  const msg = await todos.deleteOne({ _id: id });
+  console.log(msg);
+  res.send(msg);
+});
+
+router.put("/complete/:id", async (req, res) => {
+  id = req.params.id;
+  console.log(id);
+  const msg = await todos.findByIdAndUpdate(id, {
+    completed: true,
+  });
+  console.log(msg);
+  res.send(msg);
+});
+router.put("/uncomplete/:id", async (req, res) => {
+  id = req.params.id;
+  console.log(id);
+  const msg = await todos.findByIdAndUpdate(id, {
+    completed: false,
+  });
+  console.log(msg);
+  res.send(msg);
+});
 
 module.exports = router;
